@@ -44,6 +44,11 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("the fruit load list contrains:")
 streamlit.dataframe(my_data_rows)
 
+
+streamlit.header("Fruityvice Fruit Advice!")
+fruit_choice = streamlit.text_input('What fruit would you like information about?','jackfruit')
+
+
 # Allow the end user to add a fruit to the list 
 def insert_row_snowflake(new_fruit):
   with my_cnx.cursor() as my_cur:
@@ -57,8 +62,6 @@ if streamlit. button('Add a Fruit to the List'):
 
 
 
-streamlit.header("Fruityvice Fruit Advice!")
-fruit_choice = streamlit.text_input('What fruit would you like information about?','jackfruit')
 
 
 
