@@ -39,7 +39,6 @@ streamlit.stop()
 from urllib.error import URLError
 
 import snowflake.connector
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_data_rows = my_cur.fetchall()
 streamlit.header("the fruit load list contrains:")
