@@ -37,7 +37,8 @@ try:
   else:
    back_from_function = get_fruityvice_data(fruit_choice) 
    streamlit.dataframe(back_from_function)
-   streamlit.error()
+   
+   
 # don't run anythinh past here while we troubleshoot 
 streamlit.stop()
 from urllib.error import URLError
