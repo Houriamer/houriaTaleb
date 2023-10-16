@@ -41,10 +41,6 @@ try:
    
 # don't run anythinh past here while we troubleshoot 
 
-
-import snowflake.connector
-
-
 streamlit.header ("The fruit load list contains:")
 #Snowflake-related functions
 def get_fruit_load_list():
