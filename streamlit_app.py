@@ -39,13 +39,14 @@ try:
     streamlit.dataframe(back_from function)
 
 
-  
-  streamlit.error()
+ streamlit.error()
 # don't run anythinh past here while we troubleshoot 
 streamlit.stop()
 from urllib.error import URLError
 
 import snowflake.connector
+
+
 my_cur = my_cnx.cursor()
 my_data_rows = my_cur.fetchall()
 streamlit.header("the fruit load list contrains:")
