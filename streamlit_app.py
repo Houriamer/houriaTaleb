@@ -39,7 +39,7 @@ try:
    streamlit.dataframe(back_from_function)
 
 
-streamlit.error()
+streamlit.error():
 # don't run anythinh past here while we troubleshoot 
 streamlit.stop()
 from urllib.error import URLError
@@ -47,10 +47,18 @@ from urllib.error import URLError
 import snowflake.connector
 
 
-my_cur = my_cnx.cursor()
-my_data_rows = my_cur.fetchall()
-streamlit.header("the fruit load list contrains:")
-streamlit.dataframe(my_data_rows)
+streamlit.header ("The fruit load list contains:")
+#Snowflake-related functions
+def get_fruit_load_list():
+  with my_cnx.cursor() as my_cur:
+    my_cur.execute("select * from fruit_load _list")
+    return my_cur. fetchal1()
+    
+    # Add a button to load the fruit 
+if streamlit.button('Get Fruit Load List'):
+  my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+  my_data_rows = get_fruit_load_list()
+  streamlit.dataframe(my_data_rows) 
 
 
 streamlit.header("Fruityvice Fruit Advice!")
