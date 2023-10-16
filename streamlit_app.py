@@ -39,7 +39,7 @@ try:
    streamlit.dataframe(back_from_function)
 
 
- streamlit.error()
+streamlit.error()
 # don't run anythinh past here while we troubleshoot 
 streamlit.stop()
 from urllib.error import URLError
