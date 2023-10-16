@@ -40,8 +40,7 @@ try:
    
    
 # don't run anythinh past here while we troubleshoot 
-streamlit.stop()
-from urllib.error import URLError
+
 
 import snowflake.connector
 
